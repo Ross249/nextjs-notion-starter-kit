@@ -14,12 +14,12 @@ export default siteConfig({
   author: 'JimLuo',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'JimLuo‘s Blog',
 
   // social usernames (optional)
-//   twitter: 'transitive_bs',
-//   github: 'transitive-bullshit',
-//   linkedin: 'fisch2',
+//   twitter: '',
+//   github: '',
+//   linkedin: '',
 
   // default notion icon and cover images for site-wide consistency (optional)
   // page-specific values will override these site-wide defaults
