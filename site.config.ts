@@ -10,7 +10,8 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'JimLuo’s Blog',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
+  // nextjs-notion-starter-kit.transitivebullsh.it
+  domain: 'https://jimluo.notion.site/JimLuo-s-Blog-c97227d805be4b3f9bb72877cc8afc14',
   author: 'JimLuo',
 
   // open graph metadata (optional)
