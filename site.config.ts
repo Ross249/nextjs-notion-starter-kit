@@ -17,7 +17,7 @@ export default siteConfig({
   description: 'The Collection Of Thoughts.',
 
   // social usernames (optional)
-  twitter: 'JimLuo_',
+  twitter: 'JimLuo_en',
   github: 'Ross249',
   linkedin: 'jim-luo-ross',
   // mastodon: '#', // optional mastodon profile URL, provides link verification
