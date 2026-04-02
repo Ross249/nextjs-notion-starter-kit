@@ -1,4 +1,3 @@
-import ky from 'ky'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 import { ImageResponse } from 'next/og'
 import { type PageBlock } from 'notion-types'
@@ -12,10 +11,13 @@ import {
 } from 'notion-utils'
 
 import * as libConfig from '@/lib/config'
-import interSemiBoldFont from '@/lib/fonts/inter-semibold'
 import { mapImageUrl } from '@/lib/map-image-url'
 import { notion } from '@/lib/notion-api'
 import { type NotionPageInfo, type PageError } from '@/lib/types'
+
+const interFontPromise = fetch(
+  'https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZs.woff'
+).then((res) => res.arrayBuffer())
 
 export const runtime = 'edge'
 
@@ -155,7 +157,7 @@ export default async function OGImage(
       fonts: [
         {
           name: 'Inter',
-          data: interSemiBoldFont,
+          data: await interFontPromise,
           style: 'normal',
           weight: 700
         }
@@ -277,8 +279,8 @@ async function isUrlReachable(
   }
 
   try {
-    await ky.head(url)
-    return true
+    const res = await fetch(url, { method: 'HEAD' })
+    return res.ok
   } catch {
     return false
   }
